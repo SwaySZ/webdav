@@ -88,7 +88,7 @@ func (c *Config) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			http.Error(w, "Not authorized", 401)
 			return
 		}
-
+ 
 		if !checkPassword(user.Password, password) {
 			zap.L().Info("invalid password", zap.String("username", username), zap.String("remote_address", r.RemoteAddr))
 			http.Error(w, "Not authorized", 401)
