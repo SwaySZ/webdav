@@ -23,12 +23,12 @@ jobs:
 
     steps:
     - name: Install Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v4
       with:
         go-version: ${{ matrix.go }}
 
     - name: Checkout code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Print Go version and environment
       id: vars
@@ -79,8 +79,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v2
-      - uses: goreleaser/goreleaser-action@v2
+        uses: actions/checkout@v4
+      - uses: goreleaser/goreleaser-action@v5
         with:
           version: latest
           args: check
